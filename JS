@@ -1,0 +1,98 @@
+$(document).ready(() => {
+  const modalBtn = $('.cta__button--reviews');
+  const modal = $('.review-modal');
+  const modalSubmit = $('.review-modal__submit');
+  const carouselItems = $('.carousel__item');
+  const carouselSummaries = $('.carousel__summary');
+  const carouselHeading = $('.landing-section__heading');
+
+  const headers = [
+    'Salad with The Lads',
+    'YumHaus Burgers',
+    'Corys Korean',
+    'Salad with The Lads',
+    'YumHaus Burgers',
+    'Corys Korean',
+  ];
+
+  let currentIndex = 1;
+
+  // Set initial carousel header
+  carouselHeading.text(headers[currentIndex % headers.length]);
+
+  // Handle carousel arrow navigation
+  $('.carousel__arrow--next .carousel__arrow-img').on('click', () => {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    if (currentIndex === 5) currentIndex = 2;
+    updateCarousel();
+  });
+
+  $('.carousel__arrow--prev .carousel__arrow-img').on('click', () => {
+    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+    if (currentIndex === 0) currentIndex = 3;
+    updateCarousel();
+  });
+
+  function updateCarousel() {
+    carouselItems.removeClass('carousel__item--active');
+
+    const leftIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+    const rightIndex = (currentIndex + 1) % carouselItems.length;
+
+    carouselItems.eq(leftIndex).addClass('carousel__item--active');
+    carouselItems.eq(currentIndex).addClass('carousel__item--active');
+    carouselItems.eq(rightIndex).addClass('carousel__item--active');
+
+    carouselHeading.text(headers[currentIndex % headers.length]);
+
+    $('#star5').css('display', currentIndex === 2 ? 'inline' : 'none');
+    $('#star4').css('display', currentIndex === 3 ? 'none' : 'inline');
+
+    console.log(`Current carousel index: ${currentIndex}`);
+  }
+
+  // Handle modal open/close
+  modalBtn.on('click', () => {
+    modal.fadeIn();
+  });
+
+  modalSubmit.on('click', () => {
+    modal.fadeOut();
+  });
+
+  updateCarousel();
+});
+
+// Star rating logic
+function setRating(rating) {
+  document.querySelectorAll('.star-rating__icon').forEach((img) => {
+    img.src = 'Star.png';
+  });
+
+  for (let i = 1; i <= rating; i += 1) {
+    const starImg = document.querySelector(`label[for="star${i}"] img`);
+    if (starImg) {
+      starImg.src = 'Star-On.png';
+    }
+  }
+
+  const selectedInput = document.getElementById(`star${rating}`);
+  if (selectedInput) {
+    selectedInput.checked = true;
+  }
+}
+
+// Toggle summary visibility on image click
+document.querySelectorAll('.carousel__image').forEach((img, index) => {
+  img.addEventListener('click', () => {
+    console.log(`Image clicked: Index ${index}`);
+    document.querySelectorAll('.carousel__summary').forEach((summary) => {
+      summary.classList.remove('selected');
+    });
+
+    const summary = document.querySelectorAll('.carousel__summary')[index];
+    if (summary) {
+      summary.classList.add('selected');
+    }
+  });
+});
