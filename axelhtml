@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YumHaus Burgers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <img src="Logo-WTF.png" alt="logo" class="logo">
+    <img src="Main-BG.png" alt="Yellow Wallpaper" class="background">
+    <h1 class="headline">YumHaus Burgers</h1>
+
+    <!-- Spotlight Carousel Inside Hero -->
+    <div class="carousel-container">
+      <img src="Arrow-Left.png" alt="Previous" class="nav-arrow left-arrow">
+      <div class="carousel-track">
+        <img src="Spotlight-2.png" alt="Salad and black pepper" class="carousel-image">
+        <img src="Spotlight-1.png" alt="Egg and steak" class="carousel-image">
+        <img src="Spotlight-3.png" alt="Chicken with vegetables" class="carousel-image">
+      </div>
+      <img src="Arrow-Right.png" alt="Next" class="nav-arrow right-arrow">
+    </div>
+  </div>
+
+  <!-- What's Good Section -->
+  <h2 class="title">What's good?</h2>
+  <p class="paragraphs">
+    Bacon ipsum dolor amet chuck tongue meatball jerky. 
+    Shankle ham, chuck tail jerky. Picanha capicola leberkas fatback porchetta ham. 
+    Capicola chicken tongue chunk beef.
+  </p>
+  <img src="Button-Letsgo.png" alt="Let's go" class="purplebutton">
+
+  <hr>
+
+  <!-- Gallery Section -->
+  <h3 class="title">Pics!</h3>
+  <div class="image-row2">
+    <img src="Gallery-1.png" alt="Bagel and ham" class="image2">
+    <img src="Gallery-2.png" alt="Fried patty and tomato" class="image2">
+    <img src="Gallery-3.png" alt="Fries" class="image2">
+    <img src="Gallery-4.png" alt="Chicken burger" class="image2">
+  </div>
+
+  <hr>
+
+  <!-- Reviews Section -->
+  <h4 class="title">Reviews</h4>
+  <p class="paragraphs">
+    Short ribs landjaeger ut excepteur, 
+    ullamco nostrud sint andouille. Chuck dolor fugiat velit nisi labore. 
+    Turducken kielbasa in voluptate nostrud sunt flank pork prosciutto cillum.
+  </p>
+
+  <button class="reviewbutton" onclick="handleReviewClick()">
+      <img src="Button-Review.png" alt="Review">
+  </button>
+
+  <!-- Carousel Functionality -->
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+    const images = document.querySelectorAll('.carousel-image');
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const offset = -images[0].clientWidth * currentIndex;
+      track.style.transform = `translateX(${offset}px)`;
+    }
+
+    leftArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
+    });
+
+    rightArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    });
+  </script>
+
+</body>
+</html>
