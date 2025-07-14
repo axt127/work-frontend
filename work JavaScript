@@ -1,0 +1,34 @@
+// this is for the carousel
+$('.slider__images').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    accessibility: true,
+    prevArrow: "<button class='button button__location' type='button'><img class='btn' src='Arrow-Left.png'></button>",
+    nextArrow: "<button class='button button__location' type='button'><img class='btn' src='Arrow-Right.png'></button>"
+});
+// this is for the review dialog box
+function addrating(x) {
+    clear();
+    for (let i = 1; i < x + 1; i++) {
+        console.log("star" + i);
+        document.getElementById("star" + i).src = "Star-On.png";
+    }
+}
+function clear() {
+    let j = 1;
+    while (j < 6) {
+        document.getElementById("star" + j).src = "Star.png";
+        j++;
+    }
+}
+
+const reviewButton = document.getElementById('reviewButton');
+const reviewDialog = document.getElementById('reviewDialog');
+
+reviewButton.addEventListener('click', () => {
+    reviewDialog.showModal();
+});
+
+
