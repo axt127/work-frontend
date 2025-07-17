@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap" rel="stylesheet">
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Title -->
+    <title>What The Food!</title>
+    <script type="text/javascript" src="index.js" defer></script>
+
+</head>
+
+<body>
+    <!-- Using BEM -->
+    <section class="section section__background">
+        <!--Header -->
+        <img class="header__logo" src="Logo-WTF.png" alt="What The Food Logo" />
+        <!-- Title -->
+        <h1 class="text text__title">YumHaus Burgers</h1>
+        <!-- Carousel -->
+        <div class="slider__images">
+            <img src="Spotlight-1.png" alt="Egg meat avocado Sandwich" />
+            <img src="Spotlight-2.png" alt="Salad" />
+            <img src="Spotlight-3.png" alt="Rice Platain Bowl" />
+            <img src="Spotlight-1.png" alt="Egg meat avocado Sandwich" />
+            <img src="Spotlight-2.png" alt="Salad" />
+            <img src="Spotlight-3.png" alt="Rice Platain Bowl" />
+            </li>
+        </div>
+    </section>
+    <!-- second section -->
+    <section class="section">
+        <h2 class="text text__subtitle">What's good?</h2>
+        <p class="text text__paragraph">Bacon ipsum dolor amet jowl tongue swine drumstick ball tip filet mignon. Fatback short loin sirloin meatball jerky.
+            Short loin kevin capicola porchetta beef ribs t-bone prosciutto, alcatra picanha jowl.
+            Sausage venison shankle cow leberkas alcatra, shank ham hock turducken ground round pork belly. 
+            Swine pork bacon sirloin pancetta meatball tail capicola sausage kevin. 
+            Tongue short ribs picanha landjaegerbacon fatback pork loin capicola kielbasa ribeye cow burgdoggen. Pig pork porchetta, bacon meatball
+            fatback pancetta ground round turkey frankfurter pork belly shank brisket beef.</p>
+            <!-- button to paycoms address -->
+            <form action="https://maps.app.goo.gl/J9k7UCrB6a9arSZt6">
+            <button class="button button__location" type="submit">
+                <img src="Button-Letsgo.png" alt="Open Maps Button" />
+            </button>
+        </form>
+    </section>
+    <!-- Gallery section -->
+    <section class="section">
+        <h2 class="text text__subtitle">Picsss!</h2>
+        <div class="section__gallery">
+            <img class="section__gallery_image" src="Gallery-1.png" alt="Salmon bagel" />
+            <img class="section__gallery_image" src="Gallery-2.png" alt="Fish" />
+            <img class="section__gallery_image" src="Gallery-3.png" alt="Fries" />
+            <img class="section__gallery_image" src="Gallery-4.png" alt="Chicken burger" />
+        </div>
+    </section>
+    <!--Review section -->
+    <section class="section section__end">
+        <h2 class="text text__subtitle">Reviews</h2>
+        <p class="text text__paragraph">“Hamburger tongue leberkas ball tip, sausage ribeye kielbasa cupim tri-tip
+            biltong ham shank jowl pork.
+            Tongue filet mignon kielbasa short ribs ribeye meatloaf pork cupim rump. Pork loin cow tongue strip
+            steak jowl shankle. - Anon”</p>
+        <button class="button button__review" type="button" id="reviewButton">
+            <img src="Button-Review.png" alt="Review Button" />
+        </button>
+        <!-- Review box popup-->
+        <dialog class="dialog__popup" id="reviewDialog">
+            <form method="dialog">
+
+                <h2 class="reviewmaintitle">Leave a Review!</h2>
+                <!-- Client inputs this information-->
+                <div class="review__spacing">
+                    <div class="col-50">
+                        <h2 class="text__review">Name</h2>
+                    </div>
+                    <div >
+                        <input class="box1" type="text">
+                    </div>
+                </div>
+
+                <div class="review__spacing">
+                    <div class="col-50">
+                        <h2 class="text__review">Message</h2>
+                    </div>
+                    <div class="col-100">
+                        <textarea class="box2" name="Message"></textarea>
+                    </div>
+                </div>
+                <!-- Star rating -->
+                <div class="review__spacing">
+                    <div class="col-50">
+                        <h2 class="text__review">Star Rating</h2>
+                    </div>
+                    <div class="col-100">
+                        <img id="star1" class="star" src="Star.png" onclick="addrating(1)"
+                            alt="Star 1" data-value="1">
+                        <img id="star2" class="star" src="Star.png" onclick="addrating(2)"
+                            alt="Star 2" data-value="2">
+                        <img id="star3" class="star" src="Star.png" onclick="addrating(3)"
+                            alt="Star 3" data-value="3">
+                        <img id="star4" class="star" src="Star.png" onclick="addrating(4)"
+                            alt="Star 4" data-value="4">
+                        <img id="star5" class="star" src="Star.png" onclick="addrating(5)"
+                            alt="Star 5" data-value="5">
+                    </div>
+                </div>
+                <button class="buttonsubmit" type="submit"><img src="Button-Submit.png" alt="submit" width =300></button>
+            </form>
+        </dialog>
+    </section>
+
+    <!--Scripts-->
+    <section class="section">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    </section>
+</body>
+</html>
