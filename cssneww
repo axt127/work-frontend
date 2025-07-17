@@ -1,0 +1,196 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.header__logo {
+    display: block;
+    width: 100rem;
+    padding: 10px;
+    top: 0;
+    left: 0;
+}
+
+.section {
+    align-self: center;
+    justify-content: center;
+}
+
+.section__gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-right: 15vw;
+    padding-left: 15vw;
+}
+
+.section__gallery_image {
+    width: 17vw;
+}
+
+.section__end {
+    padding-bottom: 1vh;
+}
+
+.section__background {
+    background-size: 100% 100%;
+    background-image: url("Main-BG.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* text and text types*/
+.text {
+    font-family: "Roboto", serif;
+}
+
+.text__title {
+    font-size: 40pt;
+    text-align: center;
+}
+
+.text__subtitle {
+    font-family: "Roboto", serif;
+    font-size: 100pt;
+    padding-left: 15.25vw;
+}
+
+.text__paragraph {
+    font-family: "Roboto", serif;
+    color: grey;
+    font-size: 100pt;
+    padding-left: 15.25vw;
+    padding-right: 15.25vw;
+}
+
+.text__form {
+    font-size: 20pt;
+    text-align: center;
+    margin: 0;
+}
+/* buttons */
+.button {
+    margin: auto;
+    display: flex;
+    border: none;
+    background: none;
+    width: 200px;
+    height: 300px;
+}
+
+.button:hover {
+    color: white;
+    opacity: 0.8;
+}
+
+.button__submit {
+    padding-top: 5vh;
+}
+/* carousel */
+.slick-slider {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0 20vw 20vh;
+}
+
+.slick-slide {
+    padding-right: 1vw;
+    padding-left: 1vw;
+}
+
+.slick-arrow {
+    height: 75px;
+    align-self: center;
+    width: 200px;
+    height: 300px;
+}
+/* dialog pop up for reviews */
+.dialog__popup {
+    width: 30vw;
+    height: 10vw;
+    background-color: #ffd451;
+}
+
+.review__spacing {
+    display: flex;
+    padding-bottom: 10px;
+    padding-right: 2vw;
+    padding-left: 2vw;
+}
+
+.text-area {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 12px;
+    resize: none;
+}
+
+.text-area__name {
+    height: 25px;
+}
+
+.text-area__subject {
+    height: 150px;
+}
+.box1{
+    width: 1730px;
+    height: 100px;
+    font-size: 70px;
+    margin-top: 30px;
+}
+.box2{
+        font-size: 60px;
+        width: 1730px;
+}
+.col-50 {
+    width: 50%;
+    margin-top: 6px;
+    
+}
+.reviewmaintitle{
+    font-size: 60pt;
+    text-align: center;
+}
+.text__review{
+    font-size: 50pt;
+}
+.col-100 {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.star{
+    height: 100px;
+}
+.buttonsubmit{
+    background-color: none;
+    background: none;
+    border: none;
+    padding-left: 1700px;
+    height: 100px;
+    justify-content: center;
+}
+
+/* for phone usage */
+@media (max-device-width:1024px) {
+    .section__gallery {
+        align-items: center;
+        flex-direction: column;
+        padding-top: 2vh;
+        padding-right: 0;
+        padding-bottom: 2vh;
+        padding-left: 0;
+    }
+
+    .section__gallery_image {
+        width: 80vw;
+    }
+
+    .dialog__popup {
+        width: 80vw;
+    }
+}
